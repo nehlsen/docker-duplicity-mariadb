@@ -1,6 +1,7 @@
 FROM ghcr.io/tecnativa/docker-duplicity:4.0.0 AS base
 
-RUN apk add --no-cache mariadb-client
+RUN apk add --no-cache mariadb-client \
+    && mariadb-dump --version
 
 ENV JOB_200_WHAT='set -euo pipefail; mariadb-dump \$MARIADB_DUMP_DEFAULT_OPTIONS \$MARIADB_DUMP_OPTIONS \"\$MARIADB_DATABASE\"'
 ENV JOB_200_WHEN='daily weekly' \
