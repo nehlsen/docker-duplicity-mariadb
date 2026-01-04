@@ -15,4 +15,6 @@ adds a 200 daily/weekly job dumping the db to `src/<db-name>.sql`. recognized en
 * `MARIADB_PASSWORD` \
   database password to connect with, e.g. `"db_password"`
 * `MARIADB_DUMP_OPTIONS` \
-  mariadb dump options to use. overriding this option also disables the host, username and password options.
+  additional mariadb dump options to use. e.g. `"--single-transaction"`
+* `MARIADB_DUMP_DEFAULT_OPTIONS` \
+  mariadb dump default options to use. overriding this option disables the host, username and password options.
